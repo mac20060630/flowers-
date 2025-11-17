@@ -101,8 +101,44 @@ body{display:flex;align-items:flex-end;justify-content:center;min-height:100vh;b
 .sakura{position:absolute;width:3vmin;height:3vmin;background:radial-gradient(circle,#ffc2d1,#ff8fab);border-radius:60% 40% 60% 40%;opacity:0.8;animation:sakura-fall 7s linear infinite;filter:blur(0.1vmin)}
 @keyframes sakura-fall{0%{transform:translateY(-10vmin) rotate(0deg);opacity:0.7}50%{transform:translateY(40vmin) rotate(90deg);opacity:1}100%{transform:translateY(80vmin) rotate(180deg);opacity:0.4}}
 
-/* small responsive tweak */
-@media (max-width:700px){.flowers{transform:scale(0.55)}}
+/* responsive & title styles */
+.scene-title{
+  position:absolute;
+  top:2vmin;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:9999;
+  font-weight:700;
+  color:#ffd9f0;
+  text-shadow:0 0 1vmin rgba(255,150,220,0.6);
+  font-size:clamp(2.6vmin, 5vw, 6vmin);
+  pointer-events:none;
+  letter-spacing:0.08em;
+  opacity:0.98;
+}
+
+@media (max-width:900px){
+  .flowers{transform:scale(0.6)}
+  .scene-title{top:3vmin}
+  .moon{width:12vmin;height:12vmin;right:6vmin;top:4vmin}
+  .shooting-star{top:6vmin}
+  .sakura{width:2.6vmin;height:2.6vmin}
+  .firefly{width:1vmin;height:1vmin}
+}
+
+@media (max-width:480px){
+  .flowers{transform:scale(0.5)}
+  .flower{bottom:6vmin}
+  .flower__leaf{width:6.5vmin;height:9vmin}
+  .flower__line{height:45vmin}
+  .flower__leafs::after{width:6vmin;height:6vmin}
+  .scene-title{font-size:clamp(3vmin,6vw,7vmin);top:2.5vmin}
+  .moon{width:10vmin;height:10vmin;right:4vmin;top:3vmin}
+  .sparkle{width:0.8vmin;height:0.8vmin}
+  .sakura{width:2vmin;height:2vmin}
+  .shooting-star{animation-duration:5s}
+  .firefly{width:0.9vmin;height:0.9vmin}
+}
 
 /* freeze animations until page ready */
 .not-loaded *{animation-play-state:paused !important}
