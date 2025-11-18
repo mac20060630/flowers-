@@ -9,6 +9,19 @@
 :root {
   --dark-color: #000;
 }
+.title {
+  position: absolute;
+  top: 3vmin;
+  width: 100%;
+  text-align: center;
+  font-size: 6vmin;
+  font-weight: 700;
+  color: #a7ffee;
+  text-shadow: 0 0 2vmin #23f0ff, 0 0 4vmin #00eaff;
+  z-index: 999;
+  pointer-events: none;
+  font-family: 'Poppins', sans-serif;
+}
 
 body {
   display: flex;
